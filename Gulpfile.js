@@ -12,6 +12,7 @@ var reload = browserSync.reload;
 var watchify = require('watchify');
 var assign = require('lodash').assign;
 var join = require("path").resolve;
+var stringify = require('stringify');
 
 var jsSource = './app/app.js';
 var output = "www/"
@@ -49,6 +50,7 @@ function watchJs() {
 }
 
 function bootstrapBundle(bundle) {
+  bundle.transform(stringify(['.md']))
   return function () {
     return bundle.bundle()
       .on('log', notify)
