@@ -8,20 +8,29 @@ var notify = require('gulp-notify');
 var args = require('yargs').argv;
 var isProduction = !!args.production;
 var browserSync = require('browser-sync').create();
-
-gulp.task('default', buildOnce());
-gulp.task('dev', ['default'], dev);
+var reload = browserSync.reload;
+var watchify = require('watchify');
+var assign = require('lodash').assign;
+var join = require("path").resolve;
 
 var jsSource = './app/app.js';
-var www = './www';
+var output = "www/"
 var customOpts = {
   debug: !isProduction
 };
 
-function dev() {
+gulp.task('js', buildOnce());
+gulp.task('watch-js', watchJs());
+gulp.task('watch', ['watch-js']);
+gulp.task('dev', ['watch'], serve);
+gulp.task('default', ['js']);
+
+
+
+function serve() {
     browserSync.init({
       server: {
-          baseDir: "./www/"
+          baseDir: output
       }
     });
 }
@@ -31,16 +40,24 @@ function buildOnce() {
   return bootstrapBundle(bundle);
 }
 
+function watchJs() {
+  var opts = assign({}, watchify.args, customOpts);
+  var w = watchify(browserify(jsSource, opts));
+  var bundle = bootstrapBundle(w);
+  w.on('update', bundle);
+  return bundle
+}
+
 function bootstrapBundle(bundle) {
   return function () {
-    bundle.bundle()
-      .on('error', function () {
-
-      })
+    return bundle.bundle()
+      .on('log', notify)
+      .on('error', notify)
       .pipe(source('app.bundle.js'))
       .pipe(_if(isProduction, buffer()))
       .pipe(_if(isProduction, uglify()))
-      .pipe(gulp.dest(www))
-      .pipe(_if(!isProduction, notify('Compiled javascript')));
+      .pipe(gulp.dest(output))
+      .pipe(_if(!isProduction, notify('Compiled javascript')))
+      .pipe(_if(!isProduction, reload({stream: true})));
   }
 }
