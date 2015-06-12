@@ -1,0 +1,11 @@
+{
+  "name": "sukkerfri",
+  "version": "0.0.1",
+  "description": "Landingsite and simple blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "frode.bjerke@gmail.com",
+  "license": "ISC"
+}
