@@ -7,14 +7,24 @@ var uglify = require('gulp-uglify');
 var notify = require('gulp-notify');
 var args = require('yargs').argv;
 var isProduction = !!args.production;
+var browserSync = require('browser-sync').create();
 
 gulp.task('default', buildOnce());
+gulp.task('dev', ['default'], dev);
 
 var jsSource = './app/app.js';
 var www = './www';
 var customOpts = {
   debug: !isProduction
 };
+
+function dev() {
+    browserSync.init({
+      server: {
+          baseDir: "./www/"
+      }
+    });
+}
 
 function buildOnce() {
   var bundle = browserify(jsSource, customOpts);
