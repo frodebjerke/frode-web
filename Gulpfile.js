@@ -13,6 +13,8 @@ var watchify = require('watchify');
 var assign = require('lodash').assign;
 var join = require("path").resolve;
 var stringify = require('stringify');
+var reactify = require('reactify');
+var plumber = require('gulp-plumber');
 
 var jsSource = './app/app.js';
 var output = "www/"
@@ -51,15 +53,16 @@ function watchJs() {
 
 function bootstrapBundle(bundle) {
   bundle.transform(stringify(['.md']))
+  bundle.transform('reactify')
   return function () {
     return bundle.bundle()
       .on('log', notify)
-      .on('error', notify)
+      .on('error', notify.onError("Error: <%= error.message %>"))
       .pipe(source('app.bundle.js'))
       .pipe(_if(isProduction, buffer()))
       .pipe(_if(isProduction, uglify()))
       .pipe(gulp.dest(output))
       .pipe(_if(!isProduction, notify('Compiled javascript')))
-      .pipe(_if(!isProduction, reload({stream: true})));
+      .pipe(_if(!isProduction, reload({stream: true})))
   }
 }
