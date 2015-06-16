@@ -1,7 +1,7 @@
 var StyleSheet = require('react-style');
 
 var styles = StyleSheet.create({
-  backgroundColor: "#eeddee",
+  backgroundColor: "#ddddee",
   minHeight: "30rem"
 });
 

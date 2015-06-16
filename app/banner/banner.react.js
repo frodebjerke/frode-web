@@ -1,5 +1,6 @@
 var React = require('react');
 var BannerStyle = require('./banner-style.js');
+var Link = require('react-router').Link;
 
 var Banner = React.createClass({
 
@@ -7,6 +8,7 @@ var Banner = React.createClass({
     return (
       <section styles={BannerStyle}>
         <h1>Vi hjelper deg.</h1>
+        <Link to="landing" query={{scrollTo: "register"}}>Bli med!</Link>
       </section>
     );
   }
