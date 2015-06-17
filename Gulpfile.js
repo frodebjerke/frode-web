@@ -52,12 +52,15 @@ function watchJs() {
 }
 
 function bootstrapBundle(bundle) {
-  bundle.transform(stringify(['.md']))
+  bundle.transform(stringify(['.md', 'html']))
   bundle.transform('reactify')
   return function () {
     return bundle.bundle()
       .on('log', notify)
-      .on('error', notify.onError("Error: <%= error.message %>"))
+      .on('error', notify.onError({
+          message: "<%= error %>",
+          title: "Error: <%= error.message %>"
+      }))
       .pipe(source('app.bundle.js'))
       .pipe(_if(isProduction, buffer()))
       .pipe(_if(isProduction, uglify()))
