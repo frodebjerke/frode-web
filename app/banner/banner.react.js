@@ -7,8 +7,11 @@ var Banner = React.createClass({
   render: function() {
     return (
       <section styles={BannerStyle}>
-        <h1>Vi hjelper deg.</h1>
-        <Link to="landing" query={{scrollTo: "register"}}>Bli med!</Link>
+        <div style={BannerStyle.title}>
+          <h1 style={BannerStyle.brand}>Sukker<span styles={BannerStyle.brandFri}>fri</span></h1>
+          <h1>- Vi hjelper deg med hverdagen</h1>
+        </div>
+        <Link style={BannerStyle.register} to="landing" query={{scrollTo: "register"}}>Bli med</Link>
       </section>
     );
   }

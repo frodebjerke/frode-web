@@ -52,7 +52,7 @@ function watchJs() {
 }
 
 function bootstrapBundle(bundle) {
-  bundle.transform(stringify(['.md', 'html']))
+  bundle.transform(stringify(['.md', '.html']))
   bundle.transform('reactify')
   return function () {
     return bundle.bundle()
