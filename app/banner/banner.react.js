@@ -6,7 +6,7 @@ var Banner = React.createClass({
 
   render: function() {
     return (
-      <section styles={BannerStyle}>
+      <section styles={BannerStyle.section}>
         <div style={BannerStyle.title}>
           <h1 style={BannerStyle.brand}>Sukker<span styles={BannerStyle.brandFri}>fri</span></h1>
           <h1>- Vi hjelper deg i hverdagen</h1>

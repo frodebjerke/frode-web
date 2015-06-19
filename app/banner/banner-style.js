@@ -3,12 +3,15 @@ var assign = require('lodash').assign;
 var colors = require('../styles/colors');
 
 var styles = {
-  backgroundImage: "url(sup.jpg)",
-  backgroundSize: "cover",
-  backgroundPosition: "10%",
-  minHeight: "40rem",
-  position: "relative"
 }
+
+styles.section = assign({
+    backgroundImage: "url(sup.jpg)",
+    backgroundSize: "cover",
+    backgroundPosition: "10%",
+    minHeight: "40rem",
+    position: "relative"
+})
 
 styles.title = assign({
     //h1 typo
