@@ -31,7 +31,7 @@ gulp.task('watch-js', watchJs());
 gulp.task('watch-less', ['less'], watchLess);
 gulp.task('watch', ['watch-js', 'watch-less']);
 gulp.task('dev', ['watch'], serve);
-gulp.task('default', ['js']);
+gulp.task('default', ['less', 'js']);
 
 function serve() {
     browserSync.init({
