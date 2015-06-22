@@ -1,6 +1,7 @@
 var React = require('react');
 
 var Banner = require('../banner');
+var Blog = require('../blog');
 var Register = require('../register');
 
 var Landing = React.createClass({
@@ -21,6 +22,7 @@ var Landing = React.createClass({
     return (
       <div>
         <Banner ref="banner" />
+        <Blog ref="blog" />
         <Register ref="register" />
       </div>
     );
