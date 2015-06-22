@@ -3,14 +3,12 @@ var Router = require('react-router');
 var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 var Landing = require('./landing');
-var resetStyle = require('./styles/reset');
-var typography = require('./styles/typography');
 
 var Site = React.createClass({
 
   render: function() {
     return (
-      <div styles={[resetStyle, typography]}>
+      <div>
         <RouteHandler />
       </div>
     );

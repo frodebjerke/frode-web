@@ -1,0 +1,40 @@
+
+.serif {
+    font-size: 20px;
+    font-family: lora, georgia, serif;
+}
+
+.sans {
+    font-size: 20px;
+    font-family: roboto condensed, helvetica, sans-serif;
+}
+
+.typo--header {
+    .sans();
+    font-size: 1.6rem;
+    color: @blue--darkest;
+    margin: 0;
+    padding: 0;
+}
+
+.typo--brand {
+    font-size: 2rem;
+    color: @blue--lighter;
+    text-transform: uppercase;
+
+    .typo--brand-inner {
+        color: @blue;
+    }
+}
+
+.typo--btn {
+    .sans();
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    line-height: 4rem;
+    text-decoration: none;
+}
+
+body {
+    .serif();
+}

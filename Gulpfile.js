@@ -15,20 +15,23 @@ var join = require("path").resolve;
 var stringify = require('stringify');
 var reactify = require('reactify');
 var plumber = require('gulp-plumber');
+var less = require('gulp-less');
+var rename = require('gulp-rename');
 
 var jsSource = './app/app.js';
+var lessSource = './styles/style.less';
 var output = "www/"
 var customOpts = {
   debug: !isProduction
 };
 
 gulp.task('js', buildOnce());
+gulp.task('less', buildLess);
 gulp.task('watch-js', watchJs());
-gulp.task('watch', ['watch-js']);
+gulp.task('watch-less', ['less'], watchLess);
+gulp.task('watch', ['watch-js', 'watch-less']);
 gulp.task('dev', ['watch'], serve);
 gulp.task('default', ['js']);
-
-
 
 function serve() {
     browserSync.init({
@@ -66,4 +69,24 @@ function bootstrapBundle(bundle) {
       .pipe(_if(!isProduction, notify('Compiled javascript')))
       .pipe(_if(!isProduction, reload({stream: true})))
   }
+}
+
+
+function buildLess() {
+    gulp.src(lessSource)
+        .on('error', notify.onError({
+            message: "<%= error %>",
+            title: "Error: <%= error.message %>"
+        }))
+        .pipe(less())
+        .pipe(rename({
+            suffix: ".bundle",
+        }))
+        .pipe(gulp.dest(output))
+        .pipe(_if(!isProduction, notify('Compiled less')))
+        .pipe(_if(!isProduction, reload({stream: true})));
+}
+
+function watchLess() {
+    gulp.watch('./styles/**/*.less', buildLess);
 }
