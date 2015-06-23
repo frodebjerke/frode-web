@@ -1,5 +1,4 @@
 var React = require('react');
-var MailchimpForm = require('./mailchimp-form.html');
 var Mailchimp = require('./mailchimp.react');
 
 var Register = React.createClass({
