@@ -65,6 +65,8 @@ function bootstrapBundle(bundle) {
           title: "Error: <%= error.message %>"
       }))
       .pipe(source('app.bundle.js'))
+      .pipe(buffer())
+      .pipe(uglify())
       .pipe(gulp.dest(output))
       .pipe(_if(!isProduction, notify('Compiled javascript')))
       .pipe(_if(!isProduction, reload({stream: true})))

@@ -1,14 +1,3 @@
-/*
-styles.section = assign({
-    backgroundImage: "url(sup.jpg)",
-    backgroundSize: "cover",
-    backgroundPosition: "10%",
-    minHeight: "40rem",
-    position: "relative"
-})
-
-*/
-
 
 .md-banner {
     .md();
@@ -18,35 +7,22 @@ styles.section = assign({
     background-position: 10%;
     position: relative;
 
+    border-bottom: solid 0.5rem @green--darker;
+
 }
 
 .md-banner--brand {
+    .sans();
+    font-size: 1.5rem;
     position: absolute;
-    left: 10%;
-    bottom: 15rem;
+    left: 13%;
+    bottom: 20rem;
 }
-
-/*
-styles.brand = {
-    fontSize: '2.8rem',
-    textTransform: 'uppercase',
-    color: colors.blueLighter,
-    padding: 0,
-    margin: 0,
-    letterSpacing: '0.05rem',
-    fontFamily: 'roboto condensed, helvetica, sans-serif'
-}
-
-styles.brandFri = {
-    color: colors.blue
-}
-
-*/
 
 .md-banner--register {
     .md-btn();
 
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 15rem;
+    right: 13%;
 }

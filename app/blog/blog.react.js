@@ -12,6 +12,7 @@ var BlogPost = React.createClass({
 
     return (
       <section className="md-blog">
+        <h1 className="typo--header">Blog</h1>
         <div className="md-blog--content" dangerouslySetInnerHTML={{__html: postHtml}} />
       </section>
     );

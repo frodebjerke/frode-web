@@ -6,10 +6,8 @@ var Banner = React.createClass({
   render: function() {
     return (
       <section className="md-banner">
-        <div className="md-banner--brand">
-          <h1 className="typo--header">Din <span className="typo--brand">sukker<span className="typo--brand-inner">frie</span></span> hverdag</h1>
-        </div>
-        <Link className="typo--btn md-banner--register" to="landing" query={{scrollTo: "register"}}>Bli med</Link>
+          <h1 className="md-banner--brand">Din <span className="typo--brand">sukker<span className="typo--brand-inner">frie</span></span> hverdag</h1>
+        <Link className="typo--btn md-banner--register" to="landing" query={{scrollTo: "register"}}>Ta del</Link>
       </section>
     );
   }

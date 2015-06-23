@@ -1,12 +1,17 @@
 var React = require('react');
 var MailchimpForm = require('./mailchimp-form.html');
-
+var Mailchimp = require('./mailchimp.react');
 
 var Register = React.createClass({
 
   render: function() {
     return (
-      <section dangerouslySetInnerHTML={{__html: MailchimpForm}} />
+      <section className="md-register">
+        <h1 className="typo--header">Registrering</h1>
+        <div className="md-register--mailchimp">
+          <Mailchimp />
+        </div>
+      </section>
     );
   }
 
