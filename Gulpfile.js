@@ -18,6 +18,7 @@ var reactify = require('reactify');
 var plumber = require('gulp-plumber');
 var less = require('gulp-less');
 var rename = require('gulp-rename');
+var autoprefixer = require('gulp-autoprefixer');
 
 var jsSource = './app/app.js';
 var lessSource = './styles/style.less';
@@ -82,6 +83,8 @@ function buildLess() {
             title: "Error: <%= error.message %>"
         }))
         .pipe(less())
+        .pipe(autoprefixer({}
+        ))
         .pipe(rename({
             suffix: ".bundle",
         }))
