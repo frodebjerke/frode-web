@@ -1,10 +1,7 @@
-var React = require('react');
+const React = require('react');
+const Frode = require('../frode');
 
-var Banner = require('../banner');
-var Blog = require('../blog');
-var Register = require('../register');
-
-var Landing = React.createClass({
+const Landing = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func
@@ -21,9 +18,7 @@ var Landing = React.createClass({
   render: function() {
     return (
       <div>
-        <Banner ref="banner" />
-        <Blog ref="blog" />
-        <Register ref="register" />
+        <Frode />
       </div>
     );
   },

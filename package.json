@@ -1,15 +1,16 @@
 {
-  "name": "sukkerfri",
+  "name": "frode.space",
   "version": "0.0.1",
-  "description": "Landingsite and simple blog",
+  "description": "Personal site for Frode Bjerke",
   "main": "index.js",
   "scripts": {
     "postinstall": "gulp --production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "frode.bjerke@gmail.com",
+  "author": "Frode Bjerke <frode.bjerke@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "babelify": "^6.3.0",
     "browser-sync": "^2.7.10",
     "browserify": "^10.2.4",
     "gulp": "^3.9.0",

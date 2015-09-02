@@ -4,6 +4,7 @@ var source = require('vinyl-source-stream');
 var _if = require('gulp-if');
 var buffer = require('gulp-buffer');
 var uglify = require('gulp-uglify');
+var babelify = require('babelify');
 var notify = require('gulp-notify');
 var args = require('yargs').argv;
 var isProduction = !!args.production;
@@ -56,7 +57,7 @@ function watchJs() {
 
 function bootstrapBundle(bundle) {
   bundle.transform(stringify(['.md', '.html']))
-  bundle.transform('reactify')
+  bundle.transform('babelify')
   return function () {
     return bundle.bundle()
       .on('log', notify)
