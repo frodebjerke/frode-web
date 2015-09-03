@@ -1,11 +1,32 @@
 .md-frode {
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
   align-content: center;
 
+  transition: width 1s ease-in;
+
   background-color: @white;
+}
+
+.md-pres {
+  flex-grow: 2;
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.md-container {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.u-compress {
+  width: 0;
+  overflow: hidden;
 }
 
 @media all and (max-width: 599px) and (min-width: 320px) {
@@ -26,7 +47,7 @@
 .md-frode--menu {
 
   p.item {
-    .typo--text();
+    .typo--link();
   }
 
   p.name {

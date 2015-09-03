@@ -3,6 +3,7 @@ var Router = require('react-router');
 var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 var Landing = require('./landing');
+var Presentation = require('./presentations/presentation.react');
 
 var Site = React.createClass({
 
@@ -19,6 +20,7 @@ var Site = React.createClass({
 var routes = (
     <Route handler={Site}>
       <Route name="landing" path="/" handler={Landing} />
+      <Route name="pres" path="/pres/:pres" handler={Presentation} />
     </Route>
 )
 
