@@ -1,6 +1,8 @@
 const React = require('react');
 const Frode = require('../frode');
 
+const eventData = require('../../data/event-data');
+
 const Landing = React.createClass({
 
   contextTypes: {
@@ -18,7 +20,7 @@ const Landing = React.createClass({
   render: function() {
     return (
       <div>
-        <Frode />
+        <Frode events={eventData.events} />
       </div>
     );
   },

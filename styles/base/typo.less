@@ -9,65 +9,26 @@
     font-family: roboto condensed, helvetica, sans-serif;
 }
 
-.typo--header {
-    .sans();
-    font-size: 2rem;
-    text-transform: uppercase;
-    color: @green--darkest;
-    margin: 0;
-    padding: 0;
-}
-
-.typo--text {
-    .serif();
-    line-height: 1.6rem;
-}
-
 .typo--brand {
     .sans();
     font-size: 2rem;
     color: @green--darkest;
     text-transform: uppercase;
-
-    span {
-        display: inline;
-    }
-
-    .typo--brand-inner {
-        color: @green--darker;
-    }
-}
-
-.typo--btn {
-    .sans();
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-    line-height: 4rem;
-    padding: 0 2rem;
-    text-decoration: none;
-}
-
-.typo--input {
-    .typo--btn();
-    width: 100%;
-    background-color: @white;
-}
-
-.typo--submit {
-    .typo--btn();
-    color: @green--darker;
-    background-color: @green--lightest;
-
 }
 
 .typo--link {
+  .serif();
+  text-decoration: none;
   color: @grey;
-  font-size: 0.8rem;
   text-transform: lowercase;
-  a {
-    color: @grey;
-  }
+  font-size: 0.667rem;
+}
+
+.typo--meta {
+  text-transform: uppercase;
+  color: @green--darkest;
+  font-size: 0.5rem;
+  .sans();
 }
 
 body {

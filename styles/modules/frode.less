@@ -47,7 +47,19 @@
 .md-frode--menu {
 
   p.item {
-    .typo--link();
+     display: flex;
+     align-items: baseline;
+     margin-left: -4rem;
+
+    a {
+        margin-left: 1rem;
+        .typo--link;
+    }
+
+    .since {
+        width: 4rem;
+        .typo--meta;
+    }
   }
 
   p.name {

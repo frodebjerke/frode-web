@@ -1,5 +1,6 @@
 const React = require('react');
-var Link = require('react-router').Link;
+const Selfie = require('./selfie.react');
+const Timeline = require('./timeline.react');
 
 class Frode extends React.Component {
 
@@ -13,24 +14,15 @@ class Frode extends React.Component {
 
   render() {
 
+    const events = this.props.events;
+
     return (
         <div className="md-frode">
-            <div className="md-frode--selfie">
-              <img src="img/me-laugh.jpg" className=""/>
-            </div>
-            <div className="md-frode--menu">
-              <p className="item"><Link to="pres" params={{pres: "2015-09-04_Fagdag_brukervennlig-api-design"}}>Slides Fagdag</Link></p>
-              <p className="name">Frode Bjerke</p>
-            </div>
+            <Selfie img="img/me-laugh.jpg" />
+            <Timeline events={events} />
         </div>
 
     )
-  }
-
-  onClick() {
-    this.setState({
-      showPres: !this.state.showPres
-    })
   }
 }
 
