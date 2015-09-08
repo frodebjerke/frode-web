@@ -47,22 +47,28 @@
 .md-frode--menu {
 
   p.item {
+    .typo--info;
      display: flex;
      align-items: baseline;
-     margin-left: -4rem;
+     color: @grey;
+
 
     a {
-        margin-left: 1rem;
-        .typo--link;
+        text-decoration: none;
+        margin-left: 1.333rem;
+        color: @grey;
     }
 
     .since {
-        width: 4rem;
         .typo--meta;
+        text-align: right;
+        margin-right: 0.667rem;
+        color: @grey;
     }
   }
 
   p.name {
-    .typo--brand();
+    .typo--brand;
+    color: @green--darkest
   }
 }
