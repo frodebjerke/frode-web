@@ -14,11 +14,11 @@ class Timeline extends React.Component {
 
     return (
       <div className="md-frode--menu">
-        <Link className="typo--link" to="archive">Archive</Link>
+        <Link className="typo--link link" to="archive">Archive</Link>
         {recent}
         <p className="name">Frode Bjerke</p>
         {upcoming}
-        <Link className="typo--link" to="contact">Contact</Link>
+        <Link className="typo--link link" to="contact">Contact</Link>
       </div>
     )
   }
