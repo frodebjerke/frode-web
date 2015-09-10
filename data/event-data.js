@@ -9,6 +9,7 @@ module.exports = {
         {
             "name": "Bedriftspresentasjon UiT: Utviklervennlig API-design",
             "type": "talk",
+            "slides": "2015-09-10_uit_utviklervennlig-api-design",
             "date": "2015-09-10T14:00:00.000Z"
         },
         {
