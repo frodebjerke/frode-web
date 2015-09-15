@@ -15,6 +15,7 @@ module.exports = {
         {
             "name": "BEKK Fagkveld: Utviklervennlig API-design",
             "type": "talk",
+            "slides": "2015-09-15_fagkveld_utviklervennlig-api-design",
             "date": "2015-09-14T16:00:00.000Z"
         }
     ]
