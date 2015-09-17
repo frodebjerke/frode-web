@@ -2,21 +2,23 @@ const moment = require('moment');
 const _ = require('lodash');
 const React = require('react');
 const Link = require('react-router').Link;
-const Talk = require('./talk.react');
+const Appearances = require('../appearances')
 
 class Timeline extends React.Component {
 
   render() {
 
     const events = this.props.events;
-    const recent = _.chain(events).filter(past).sortBy(date).map(renderEvent).take(3).value();
-    const upcoming = _.chain(events).filter(future).sortBy(date).map(renderEvent).take(2).value();
+    const recent = _.chain(events).filter(past).value();
+    const upcoming = _.chain(events).filter(future).value();
 
     return (
       <div className="md-frode--menu">
-        {recent}
+        <Link className="typo--link link" to="archive">Archive</Link>
+        <Appearances className="md-frode--recent" appearances={recent} max="1" />
         <p className="name">Frode Bjerke</p>
-        {upcoming}
+        <Appearances appearances={upcoming} max="1" />
+        <Link className="typo--link link" to="contact">Contact</Link>
       </div>
     )
   }
@@ -24,23 +26,10 @@ class Timeline extends React.Component {
 
 module.exports = Timeline;
 
-function renderEvent(event) {
-  switch (event.type) {
-    case "talk":
-      return <Talk talk={event} />
-
-    return
-  }
-}
-
 function future(event) {
   return moment(event.date).isAfter(moment());
 }
 
 function past(event) {
   return moment(event.date).isBefore(moment());
-}
-
-function date(event) {
-  return moment(event);
 }
