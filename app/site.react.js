@@ -5,6 +5,7 @@ var RouteHandler = Router.RouteHandler;
 var Landing = require('./landing');
 var Presentation = require('./presentations/presentation.react');
 var Archive = require('./archive');
+var Contact = require('./contact');
 
 var Site = React.createClass({
 
@@ -23,7 +24,7 @@ var routes = (
       <Route name="landing" path="/" handler={Landing} />
       <Route name="pres" path="/pres/:pres" handler={Presentation} />
       <Route name="archive" path="archive" handler={Archive} />
-      <Route name="contact" path="contact" handler={Archive} />
+      <Route name="contact" path="contact" handler={Contact} />
     </Route>
 )
 
