@@ -7,7 +7,7 @@ class Contact extends React.Component {
     return (
       <div className="md-contact">
         <div>
-          <h1><i className="fa fa-user-plus"></i> contact & enquiries</h1>
+          <h1><i className="fa fa-comments"></i> contact</h1>
           <Link className="typo--meta" to="landing"><i className="fa fa-arrow-left"></i> Frode Bjerke</Link>
         </div>
         <div>
