@@ -3,10 +3,17 @@ const moment = require('moment');
 const React = require('react');
 const Appearances = require('../appearances');
 const Link = require('react-router').Link;
+const analytics = require('../analytics');
 
 const appearances = require('../../data/appearances');
 
 class Archive extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    analytics.pageView('archive');
+  }
 
   render() {
     return (

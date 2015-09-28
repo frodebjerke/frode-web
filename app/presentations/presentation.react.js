@@ -1,6 +1,13 @@
 const React = require('react');
+const analytics = require('../analytics');
 
 class Presentation extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    analytics.pageView('presentations');
+  }
 
   render() {
 

@@ -1,25 +1,28 @@
-var React = require('react');
-var Router = require('react-router');
-var Route = Router.Route;
-var RouteHandler = Router.RouteHandler;
-var Landing = require('./landing');
-var Presentation = require('./presentations/presentation.react');
-var Archive = require('./archive');
-var Contact = require('./contact');
+const React = require('react');
+const Router = require('react-router');
+const Route = Router.Route;
+const RouteHandler = Router.RouteHandler;
+const ga = require('react-google-analytics');
+const GAInitiailizer = ga.Initializer;
+const Landing = require('./landing');
+const Presentation = require('./presentations/presentation.react');
+const Archive = require('./archive');
+const Contact = require('./contact');
 
-var Site = React.createClass({
+const Site = React.createClass({
 
   render: function() {
     return (
       <div>
         <RouteHandler />
+        <GAInitiailizer />
       </div>
     );
   }
 
 });
 
-var routes = (
+const routes = (
     <Route handler={Site}>
       <Route name="landing" path="/" handler={Landing} />
       <Route name="pres" path="/pres/:pres" handler={Presentation} />

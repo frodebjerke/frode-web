@@ -1,7 +1,14 @@
 const React = require('react');
 const Link = require('react-router').Link;
+const analytics = require('../analytics');
 
 class Contact extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    analytics.pageView('contact');
+  }
 
   render() {
     return (

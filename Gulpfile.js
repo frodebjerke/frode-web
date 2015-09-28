@@ -19,6 +19,7 @@ var plumber = require('gulp-plumber');
 var less = require('gulp-less');
 var rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
+var envify = require('envify');
 
 var jsSource = './app/app.js';
 var lessSource = './styles/style.less';
@@ -58,6 +59,7 @@ function watchJs() {
 
 function bootstrapBundle(bundle) {
   bundle.transform(stringify(['.md', '.html']))
+  bundle.transform('envify');
   bundle.transform('babelify')
   return function () {
     return bundle.bundle()
