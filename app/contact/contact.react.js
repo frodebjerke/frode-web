@@ -22,7 +22,10 @@ class Contact extends React.Component {
             <a className="typo--link" href="https://twitter.com/frodebjerke"><i className="fa fa-twitter"></i> @frodebjerke</a>
           </div>
           <div>
-            <a className="typo--link" href="https://github.com/frodetbj"><i className="fa fa-github"></i> @frodetbj</a>
+            <a className="typo--link" href="https://github.com/frodebjerke"><i className="fa fa-github"></i> @frodebjerke</a>
+          </div>
+          <div>
+            <a className="typo--link" href="https://angel.co/frodebjerke"><i className="fa fa-angellist"></i> frodebjerke</a>
           </div>
         </div>
       </div>
