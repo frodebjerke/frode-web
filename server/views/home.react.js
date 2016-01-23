@@ -6,7 +6,7 @@ export default class Home extends React.Component {
   render() {
     return <html>
       <head>
-        <title>B O I L E R P L A T E</title>
+        <title>Frode Bjerke</title>
         <meta name="viewport" content="width=device-width" />
         <link href="assets/styles.css" rel="stylesheet" />
       </head>
