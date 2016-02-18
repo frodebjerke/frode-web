@@ -3,6 +3,7 @@ const moment = require('moment');
 const React = require('react');
 const Talk = require('./talk.react');
 const PartOf = require('./part-of.react');
+const Blog = require('./blog.react');
 
 class Appearances extends React.Component {
 
@@ -31,6 +32,8 @@ function renderAppearance(appearance) {
       return <Talk talk={appearance} />
     case 'part-of':
       return <PartOf link={appearance} />
+    case 'blog':
+      return <Blog blog={appearance} />
   }
 }
 

@@ -27,6 +27,13 @@ module.exports = {
             "type": "talk",
             "slides": "2015-09-15_fagkveld_utviklervennlig-api-design",
             "date": "2015-09-14T16:00:00.000Z"
+        },
+        {
+          "where": "labs.unacast.com",
+          "name": "A Journey: Connecting Google Container Engine and Cloud SQL",
+          "date": "2016-02-18T12:00:00.000Z" ,
+          "type": "blog",
+          "url": "http://labs.unacast.com/2016/02/18/cloud-sql-on-google-container-engine/"
         }
     ]
 }
