@@ -34,6 +34,13 @@ module.exports = {
           "date": "2016-02-18T12:00:00.000Z" ,
           "type": "blog",
           "url": "http://labs.unacast.com/2016/02/18/cloud-sql-on-google-container-engine/"
+        },
+        {
+          "where": "labs.unacast.com",
+          "name": "Best Practices for Concurrency Control in REST APIs",
+          "date": "2016-04-08T12:00:00.000Z",
+          "type": "blog",
+          "url": "http://labs.unacast.com/2016/04/08/best-practices-for-concurrency-control-in-rest-apis/"
         }
     ]
 }
