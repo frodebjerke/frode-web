@@ -41,6 +41,13 @@ module.exports = {
           "date": "2016-04-08T12:00:00.000Z",
           "type": "blog",
           "url": "http://labs.unacast.com/2016/04/08/best-practices-for-concurrency-control-in-rest-apis/"
+        },
+        {
+          "where": "labs.unacast.com",
+          "name": "12 factor apps are important",
+          "date": "2016-06-22T12:35:00.000Z",
+          "type": "blog",
+          "url": "http://labs.unacast.com/2016/06/22/12-factor-is-important/"
         }
     ]
 }
