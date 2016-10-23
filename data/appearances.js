@@ -48,6 +48,13 @@ module.exports = {
           "date": "2016-06-22T12:35:00.000Z",
           "type": "blog",
           "url": "http://labs.unacast.com/2016/06/22/12-factor-is-important/"
+        },
+        {
+            "where": "labs.unacast.com",
+            "name": "Make API Documentation Great Again",
+            "date": "2016-10-23T12:00:00.000Z",
+            "type": "blog",
+            "url": "http://labs.unacast.com/2016/10/23/make-api-documentation-great-again/"
         }
     ]
 }
